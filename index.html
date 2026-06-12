@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Disha SFI Student Assist Cell - academic resource hub for notes, KTU question papers, syllabus links, and scholarship support."
+    >
+    <title>Disha | SFI Student Assist Cell</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Disha home">
+        <span class="brand-mark">D</span>
+        <span class="brand-copy">
+          <strong>Disha</strong>
+          <span>SFI Student Assist Cell</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#resources">Resources</a>
+        <a href="#scholarships">Scholarships</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero section">
+        <div class="hero-content">
+          <p class="eyebrow">SFI GEC Kozhikode</p>
+          <h1>Disha Student Assist Cell</h1>
+          <p class="hero-copy">
+            A free academic support hub for engineering students, built around Google Drive resources,
+            verified updates, and quick access to notes, previous papers, syllabus, and scholarships.
+          </p>
+
+          <div class="hero-search" role="search">
+            <label class="sr-only" for="globalSearch">Search resources</label>
+            <input id="globalSearch" type="search" placeholder="Search notes, papers, syllabus, scholarships">
+            <button id="heroSearchButton" class="button button-light" type="button">Search</button>
+          </div>
+
+          <div class="hero-stats" aria-label="Resource highlights">
+            <div>
+              <strong id="statResources">0</strong>
+              <span>Drive resources</span>
+            </div>
+            <div>
+              <strong id="statDepartments">0</strong>
+              <span>Departments</span>
+            </div>
+            <div>
+              <strong id="statScholarships">0</strong>
+              <span>Support cards</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="quick-links section" aria-label="Core resource areas">
+        <a class="feature-link feature-notes" href="#resources" data-category-link="Notes">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img">
+              <path d="M6 3h9l3 3v15H6z"></path>
+              <path d="M15 3v4h4"></path>
+              <path d="M8 11h8M8 15h8M8 19h5"></path>
+            </svg>
+          </span>
+          <strong>Notes</strong>
+          <span>Module notes and department collections</span>
+        </a>
+        <a class="feature-link feature-papers" href="#resources" data-category-link="Papers">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img">
+              <path d="M7 4h10v16H7z"></path>
+              <path d="M9 8h6M9 12h6M9 16h4"></path>
+            </svg>
+          </span>
+          <strong>Papers</strong>
+          <span>KTU question papers and model exams</span>
+        </a>
+        <a class="feature-link feature-syllabus" href="#resources" data-category-link="Syllabus">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img">
+              <path d="M5 5h6a4 4 0 0 1 4 4v10H9a4 4 0 0 0-4-4z"></path>
+              <path d="M15 9a4 4 0 0 1 4-4v14a4 4 0 0 0-4 4z"></path>
+            </svg>
+          </span>
+          <strong>Syllabus</strong>
+          <span>Scheme-wise curriculum and subject lists</span>
+        </a>
+        <a class="feature-link feature-scholarships" href="#scholarships">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img">
+              <path d="M12 3 4 7l8 4 8-4z"></path>
+              <path d="M6 9v5c0 2 3 4 6 4s6-2 6-4V9"></path>
+              <path d="M20 7v6"></path>
+            </svg>
+          </span>
+          <strong>Scholarships</strong>
+          <span>Eligibility, documents, and application support</span>
+        </a>
+      </section>
+
+      <section id="resources" class="section resource-section">
+        <div class="section-header">
+          <p class="eyebrow">Academic archive</p>
+          <h2>Find the right Drive link fast</h2>
+          <p>
+            Search and filter the Disha resource bank by type, department, semester, and scheme.
+          </p>
+        </div>
+
+        <div class="filter-panel">
+          <div class="search-field">
+            <label for="resourceSearch">Search resource bank</label>
+            <input id="resourceSearch" type="search" placeholder="Subject, semester, department, tag">
+          </div>
+
+          <div class="category-tabs" id="categoryTabs" aria-label="Resource categories"></div>
+
+          <div class="filter-grid">
+            <label>
+              Department
+              <select id="departmentFilter"></select>
+            </label>
+            <label>
+              Semester
+              <select id="semesterFilter"></select>
+            </label>
+            <label>
+              Scheme
+              <select id="schemeFilter"></select>
+            </label>
+            <label>
+              Sort
+              <select id="sortFilter">
+                <option value="updated-desc">Recently updated</option>
+                <option value="title-asc">Title A-Z</option>
+                <option value="semester-asc">Semester</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="result-meta">
+          <p id="resourceCount">Showing resources</p>
+          <button id="resetFilters" class="text-button" type="button">Reset filters</button>
+        </div>
+
+        <div id="resourceGrid" class="resource-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="scholarships" class="section scholarship-section">
+        <div class="section-header">
+          <p class="eyebrow">Financial support</p>
+          <h2>Scholarship assist desk</h2>
+          <p>
+            Keep verified notices, document checklists, and application support contacts in one place.
+          </p>
+        </div>
+
+        <div class="scholarship-toolbar" id="scholarshipFilters" aria-label="Scholarship filters"></div>
+        <div id="scholarshipGrid" class="scholarship-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="about" class="section about-section">
+        <div class="about-copy">
+          <p class="eyebrow">About Disha</p>
+          <h2>Academic support that stays close to students</h2>
+          <p>
+            Disha is the official student assist cell of SFI GEC Kozhikode. The site is designed
+            to make academic material easier to find, keep resource links organized, and help
+            students move through each semester with less confusion.
+          </p>
+        </div>
+        <div class="about-grid">
+          <article>
+            <span>01</span>
+            <h3>Collect</h3>
+            <p>Gather notes, question papers, syllabus files, and support documents from trusted student sources.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Verify</h3>
+            <p>Check links, label schemes and semesters clearly, and keep outdated material away from current batches.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Publish</h3>
+            <p>Share Drive links through a fast, mobile-friendly interface that students can use before exams.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-section">
+        <div class="section-header">
+          <p class="eyebrow">Reach the cell</p>
+          <h2>Contact Disha coordinators</h2>
+          <p>
+            Add coordinator emails, WhatsApp links, or form endpoints here when the team finalizes them.
+          </p>
+        </div>
+        <div id="contactGrid" class="contact-grid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Disha SFI Student Assist Cell, GEC Kozhikode</p>
+      <a href="#home">Back to top</a>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="src/data.js"></script>
+    <script src="src/app.js"></script>
+  </body>
+</html>
