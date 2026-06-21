@@ -42,34 +42,67 @@
 
     <main id="home">
       <section class="hero section">
-        <div class="hero-content">
-          <p class="eyebrow">SFI GEC Kozhikode</p>
-          <h1>Disha Student Assist Cell</h1>
-          <p class="hero-copy">
-            A free academic support hub for engineering students, built around Google Drive resources,
-            verified updates, and quick access to notes, previous papers, syllabus, and scholarships.
-          </p>
+        <div class="hero-shell">
+          <div class="hero-content">
+            <div class="hero-kicker" aria-label="Organization and service">
+              <span>SFI GEC Kozhikode</span>
+              <span>Academic resource desk</span>
+            </div>
 
-          <div class="hero-search" role="search">
-            <label class="sr-only" for="globalSearch">Search resources</label>
-            <input id="globalSearch" type="search" placeholder="Search notes, papers, syllabus, scholarships">
-            <button id="heroSearchButton" class="button button-light" type="button">Search</button>
+            <h1>
+              <span class="hero-name">Disha</span>
+              <span class="hero-title">Student Assist Cell</span>
+            </h1>
+
+            <p class="hero-copy">
+              Notes, previous papers, syllabus, and scholarship support for every engineering student.
+              Curated by students and organized through Google Drive.
+            </p>
+
+            <nav class="hero-routes" aria-label="Popular resource routes">
+              <a href="#resources" data-category-link="Notes"><span>01</span> Notes</a>
+              <a href="#resources" data-category-link="Papers"><span>02</span> Papers</a>
+              <a href="#resources" data-category-link="Syllabus"><span>03</span> Syllabus</a>
+            </nav>
           </div>
 
-          <div class="hero-stats" aria-label="Resource highlights">
-            <div>
-              <strong id="statResources">0</strong>
-              <span>Drive resources</span>
+          <aside class="hero-desk" aria-label="Resource search desk">
+            <div class="hero-desk-head">
+              <div>
+                <span class="desk-number">01 / Start here</span>
+                <h2>Find your material</h2>
+              </div>
+              <span class="desk-status">Live archive</span>
             </div>
-            <div>
-              <strong id="statDepartments">0</strong>
-              <span>Departments</span>
+
+            <p>Search the complete student resource library.</p>
+
+            <div class="hero-search" role="search">
+              <label class="sr-only" for="globalSearch">Search resources</label>
+              <input id="globalSearch" type="search" placeholder="Subject, semester, department...">
+              <button id="heroSearchButton" class="button button-light" type="button">Search</button>
             </div>
-            <div>
-              <strong id="statScholarships">0</strong>
-              <span>Support cards</span>
+
+            <div class="hero-stats" aria-label="Resource highlights">
+              <div>
+                <strong id="statResources">0</strong>
+                <span>Drive resources</span>
+              </div>
+              <div>
+                <strong id="statDepartments">0</strong>
+                <span>Departments</span>
+              </div>
+              <div>
+                <strong id="statScholarships">0</strong>
+                <span>Support cards</span>
+              </div>
             </div>
-          </div>
+
+            <div class="hero-desk-foot">
+              <span>Free to access</span>
+              <span>Google Drive library</span>
+            </div>
+          </aside>
         </div>
       </section>
 
