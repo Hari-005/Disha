@@ -1,5 +1,5 @@
 (function () {
-  var data = window.dishaData || { resources: [], scholarships: [], contacts: [] };
+  var data = normalizeData(window.dishaData || {});
   var resourceState = {
     query: "",
     category: "All",
@@ -38,6 +38,14 @@
     return Array.from(new Set(values.filter(Boolean))).sort(function (a, b) {
       return a.localeCompare(b, undefined, { numeric: true });
     });
+  }
+
+  function normalizeData(nextData) {
+    return {
+      resources: Array.isArray(nextData.resources) ? nextData.resources : [],
+      scholarships: Array.isArray(nextData.scholarships) ? nextData.scholarships : [],
+      contacts: Array.isArray(nextData.contacts) ? nextData.contacts : []
+    };
   }
 
   function isRealUrl(url) {
@@ -411,5 +419,22 @@
     bindEvents();
   }
 
-  init();
+  function boot() {
+    if (typeof window.loadDishaSanityData !== "function") {
+      init();
+      return;
+    }
+
+    window.loadDishaSanityData().then(function (remoteData) {
+      if (remoteData) {
+        data = normalizeData(remoteData);
+      }
+      init();
+    }).catch(function (error) {
+      console.warn("Using local fallback data because Sanity could not load.", error);
+      init();
+    });
+  }
+
+  boot();
 }());

@@ -1,0 +1,20 @@
+{
+  "name": "disha-sanity-studio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "import:sample": "node scripts/import-sample-data.mjs"
+  },
+  "dependencies": {
+    "@sanity/client": "latest",
+    "@sanity/icons": "latest",
+    "@sanity/vision": "latest",
+    "sanity": "latest",
+    "styled-components": "^6.1.19"
+  },
+  "devDependencies": {}
+}
