@@ -1,6 +1,6 @@
 # Disha
 
-Disha is the official student assist cell of SFI GEC Kozhikode. This project is a free academic resource hub with study notes, KTU question papers, syllabus links, and scholarship support for engineering students.
+Disha is the official student assistance cell of SFI GEC Kozhikode. This project is a free academic resource hub with study notes, KTU question papers, syllabus links, and scholarship support for engineering students.
 
 ## Current version
 

@@ -5,7 +5,7 @@ import { schemaTypes } from "./schemaTypes/index.js";
 
 export default defineConfig({
   name: "disha",
-  title: "Disha Student Assist Cell",
+  title: "Disha Student Assistance Cell",
   projectId: process.env.SANITY_STUDIO_PROJECT_ID || "luona25o",
   dataset: process.env.SANITY_STUDIO_DATASET || "production",
   plugins: [structureTool(), visionTool()],
