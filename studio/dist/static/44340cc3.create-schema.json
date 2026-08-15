@@ -1,0 +1,623 @@
+[
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "description": "Optional ID from the old local data file. Do not use this as the Sanity document ID.",
+        "readOnly": true,
+        "hidden": "conditional",
+        "name": "legacyId",
+        "type": "string",
+        "title": "Legacy ID"
+      },
+      {
+        "initialValue": "published",
+        "options": {
+          "list": [
+            {
+              "title": "Draft",
+              "value": "draft"
+            },
+            {
+              "title": "Published",
+              "value": "published"
+            }
+          ],
+          "layout": "radio"
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "draft",
+                  "published"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "status",
+        "type": "string",
+        "title": "Publish status"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Notes",
+              "value": "Notes"
+            },
+            {
+              "title": "Papers",
+              "value": "Papers"
+            },
+            {
+              "title": "Syllabus",
+              "value": "Syllabus"
+            }
+          ],
+          "layout": "radio"
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "Notes",
+                  "Papers",
+                  "Syllabus"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "department",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "semester",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "scheme",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "subject",
+        "type": "string"
+      },
+      {
+        "rows": 3,
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "max",
+                "constraint": 220
+              }
+            ]
+          }
+        ],
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "name": "driveUrl",
+        "type": "url",
+        "title": "Google Drive URL"
+      },
+      {
+        "initialValue": "Drive folder",
+        "options": {
+          "list": [
+            {
+              "title": "Drive folder",
+              "value": "Drive folder"
+            },
+            {
+              "title": "Drive file",
+              "value": "Drive file"
+            }
+          ],
+          "layout": "radio"
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "Drive folder",
+                  "Drive file"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "driveType",
+        "type": "string",
+        "title": "Drive type"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "updatedAt",
+        "type": "date",
+        "title": "Updated date"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "max",
+                "constraint": 8
+              }
+            ]
+          }
+        ],
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "tags",
+        "type": "array"
+      }
+    ],
+    "name": "resource",
+    "type": "document",
+    "title": "Academic Resource"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "readOnly": true,
+        "hidden": "conditional",
+        "name": "legacyId",
+        "type": "string",
+        "title": "Legacy ID"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "provider",
+        "type": "string"
+      },
+      {
+        "initialValue": "Active",
+        "options": {
+          "list": [
+            {
+              "title": "Active",
+              "value": "Active"
+            },
+            {
+              "title": "Watch",
+              "value": "Watch"
+            },
+            {
+              "title": "Closed",
+              "value": "Closed"
+            },
+            {
+              "title": "Hidden",
+              "value": "Hidden"
+            }
+          ],
+          "layout": "radio"
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "Active",
+                  "Watch",
+                  "Closed",
+                  "Hidden"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "status",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "deadline",
+        "type": "string"
+      },
+      {
+        "rows": 3,
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "max",
+                "constraint": 240
+              }
+            ]
+          }
+        ],
+        "name": "description",
+        "type": "text",
+        "title": "Summary"
+      },
+      {
+        "initialValue": "Open link",
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "actionLabel",
+        "type": "string",
+        "title": "Action label"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "name": "url",
+        "type": "url",
+        "title": "URL"
+      }
+    ],
+    "name": "scholarship",
+    "type": "document",
+    "title": "Scholarship Support"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "readOnly": true,
+        "hidden": "conditional",
+        "name": "legacyId",
+        "type": "string",
+        "title": "Legacy ID"
+      },
+      {
+        "initialValue": "active",
+        "options": {
+          "list": [
+            {
+              "title": "Active",
+              "value": "active"
+            },
+            {
+              "title": "Hidden",
+              "value": "hidden"
+            }
+          ],
+          "layout": "radio"
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "active",
+                  "hidden"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "status",
+        "type": "string"
+      },
+      {
+        "rows": 3,
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "max",
+                "constraint": 220
+              }
+            ]
+          }
+        ],
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "initialValue": "Contact",
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "label",
+        "type": "string",
+        "title": "Button label"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/",
+                      "/^mailto$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "description": "Use a mailto link, WhatsApp link, Google Form, or public profile URL.",
+        "name": "url",
+        "type": "url",
+        "title": "Contact URL"
+      },
+      {
+        "initialValue": 10,
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 0
+              }
+            ]
+          }
+        ],
+        "name": "orderRank",
+        "type": "number",
+        "title": "Display order"
+      }
+    ],
+    "name": "contact",
+    "type": "document",
+    "title": "Contact Card"
+  }
+]
