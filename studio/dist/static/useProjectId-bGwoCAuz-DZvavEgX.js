@@ -1,0 +1,1 @@
+import{u as e}from"./dist-COg6aW_b.js";function t(){return e().projectId}export{t};

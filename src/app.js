@@ -2,7 +2,6 @@
   var data = normalizeData(window.dishaData || {});
   var resourceState = {
     query: "",
-    category: "All",
     department: "All",
     semester: "All",
     scheme: "All",
@@ -15,7 +14,6 @@
     globalSearch: document.getElementById("globalSearch"),
     heroSearchButton: document.getElementById("heroSearchButton"),
     resourceSearch: document.getElementById("resourceSearch"),
-    categoryTabs: document.getElementById("categoryTabs"),
     departmentFilter: document.getElementById("departmentFilter"),
     semesterFilter: document.getElementById("semesterFilter"),
     schemeFilter: document.getElementById("schemeFilter"),
@@ -84,7 +82,6 @@
 
     var haystack = [
       resource.title,
-      resource.category,
       resource.department,
       resource.semester,
       resource.scheme,
@@ -100,7 +97,6 @@
     var filtered = data.resources.filter(function (resource) {
       return (
         resourceMatchesQuery(resource, resourceState.query) &&
-        (resourceState.category === "All" || resource.category === resourceState.category) &&
         (resourceState.department === "All" || resource.department === resourceState.department) &&
         (resourceState.semester === "All" || resource.semester === resourceState.semester) &&
         (resourceState.scheme === "All" || resource.scheme === resourceState.scheme)
@@ -134,27 +130,6 @@
     });
   }
 
-  function renderCategoryTabs() {
-    var categories = ["All"].concat(unique(data.resources.map(function (resource) {
-      return resource.category;
-    })));
-
-    els.categoryTabs.innerHTML = "";
-    categories.forEach(function (category) {
-      var button = document.createElement("button");
-      button.className = "tab-button";
-      button.type = "button";
-      button.textContent = category;
-      button.setAttribute("aria-pressed", String(resourceState.category === category));
-      button.addEventListener("click", function () {
-        resourceState.category = category;
-        renderResources();
-        renderCategoryTabs();
-      });
-      els.categoryTabs.appendChild(button);
-    });
-  }
-
   function renderScholarshipFilters() {
     var statuses = ["All"].concat(unique(data.scholarships.map(function (scholarship) {
       return scholarship.status;
@@ -185,10 +160,6 @@
     ].join("");
   }
 
-  function badgeClass(category) {
-    return "badge badge-" + normalize(category).replace(/\s+/g, "-");
-  }
-
   function renderResources() {
     var resources = getFilteredResources();
     els.resourceGrid.innerHTML = "";
@@ -208,7 +179,6 @@
       article.className = "resource-card";
       article.innerHTML = [
         '<div class="card-topline">',
-        '<span class="' + badgeClass(resource.category) + '">' + resource.category + "</span>",
         '<span class="updated">Updated ' + formatDate(resource.updatedAt) + "</span>",
         "</div>",
         "<h3>" + resource.title + "</h3>",
@@ -281,18 +251,9 @@
     });
   }
 
-  function setFilterFromFeature(category) {
-    resourceState.category = category;
-    resourceState.query = "";
-    els.resourceSearch.value = "";
-    renderCategoryTabs();
-    renderResources();
-  }
-
   function resetFilters() {
     resourceState = {
       query: "",
-      category: "All",
       department: "All",
       semester: "All",
       scheme: "All",
@@ -303,7 +264,6 @@
     els.semesterFilter.value = "All";
     els.schemeFilter.value = "All";
     els.sortFilter.value = "updated-desc";
-    renderCategoryTabs();
     renderResources();
   }
 
@@ -347,12 +307,6 @@
     });
 
     els.resetFilters.addEventListener("click", resetFilters);
-
-    document.querySelectorAll("[data-category-link]").forEach(function (link) {
-      link.addEventListener("click", function () {
-        setFilterFromFeature(link.getAttribute("data-category-link"));
-      });
-    });
 
     document.addEventListener("click", function (event) {
       var copyButton = event.target.closest("[data-copy-url]");
@@ -411,7 +365,6 @@
     })));
 
     renderStats();
-    renderCategoryTabs();
     renderScholarshipFilters();
     renderResources();
     renderScholarships();

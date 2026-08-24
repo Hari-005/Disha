@@ -48,7 +48,6 @@ Copy one object inside `resources` in `src/data.js` and update the fields:
 {
   id: "notes-cse-s4",
   title: "CSE S4 Notes Collection",
-  category: "Notes",
   department: "CSE",
   semester: "S4",
   scheme: "KTU 2024",
@@ -59,14 +58,6 @@ Copy one object inside `resources` in `src/data.js` and update the fields:
   updatedAt: "2026-06-12",
   tags: ["CSE", "S4", "Modules"]
 }
-```
-
-Valid categories used by the current UI:
-
-```txt
-Notes
-Papers
-Syllabus
 ```
 
 ## Next improvements

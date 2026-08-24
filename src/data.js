@@ -3,7 +3,6 @@ window.dishaData = {
     {
       id: "notes-common-s1-s2",
       title: "S1/S2 Common Notes Collection",
-      category: "Notes",
       department: "Common",
       semester: "S1/S2",
       scheme: "KTU 2024",
@@ -17,7 +16,6 @@ window.dishaData = {
     {
       id: "notes-cse-s3",
       title: "CSE S3 Notes Collection",
-      category: "Notes",
       department: "CSE",
       semester: "S3",
       scheme: "KTU 2024",
@@ -31,7 +29,6 @@ window.dishaData = {
     {
       id: "notes-ece-s3",
       title: "ECE S3 Notes Collection",
-      category: "Notes",
       department: "ECE",
       semester: "S3",
       scheme: "KTU 2024",
@@ -45,7 +42,6 @@ window.dishaData = {
     {
       id: "papers-common-s1-s2",
       title: "S1/S2 Question Paper Bank",
-      category: "Papers",
       department: "Common",
       semester: "S1/S2",
       scheme: "KTU 2024",
@@ -59,7 +55,6 @@ window.dishaData = {
     {
       id: "papers-cse-s3",
       title: "CSE S3 Previous Question Papers",
-      category: "Papers",
       department: "CSE",
       semester: "S3",
       scheme: "KTU 2024",
@@ -73,7 +68,6 @@ window.dishaData = {
     {
       id: "papers-me-s5",
       title: "ME S5 Question Paper Bank",
-      category: "Papers",
       department: "ME",
       semester: "S5",
       scheme: "KTU 2019",
@@ -87,7 +81,6 @@ window.dishaData = {
     {
       id: "syllabus-ktu-2024",
       title: "KTU 2024 Scheme Syllabus",
-      category: "Syllabus",
       department: "Common",
       semester: "All",
       scheme: "KTU 2024",
@@ -101,7 +94,6 @@ window.dishaData = {
     {
       id: "syllabus-ktu-2019",
       title: "KTU 2019 Scheme Syllabus",
-      category: "Syllabus",
       department: "Common",
       semester: "All",
       scheme: "KTU 2019",
@@ -115,7 +107,6 @@ window.dishaData = {
     {
       id: "syllabus-civil-curriculum",
       title: "Civil Engineering Curriculum Sheets",
-      category: "Syllabus",
       department: "CE",
       semester: "All",
       scheme: "KTU 2024",

@@ -36,20 +36,6 @@ export const resource = defineType({
       validation: (rule) => rule.required()
     }),
     defineField({
-      name: "category",
-      title: "Category",
-      type: "string",
-      options: {
-        list: [
-          { title: "Notes", value: "Notes" },
-          { title: "Papers", value: "Papers" },
-          { title: "Syllabus", value: "Syllabus" }
-        ],
-        layout: "radio"
-      },
-      validation: (rule) => rule.required()
-    }),
-    defineField({
       name: "department",
       title: "Department",
       type: "string",
@@ -120,13 +106,12 @@ export const resource = defineType({
   preview: {
     select: {
       title: "title",
-      category: "category",
       department: "department",
       semester: "semester"
     },
-    prepare: ({ title, category, department, semester }) => ({
+    prepare: ({ title, department, semester }) => ({
       title,
-      subtitle: [category, department, semester].filter(Boolean).join(" / ")
+      subtitle: [department, semester].filter(Boolean).join(" / ")
     })
   }
 });

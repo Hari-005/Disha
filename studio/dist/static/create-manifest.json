@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-08-15T09:23:58.211Z",
-  "studioVersion": "6.6.0",
+  "createdAt": "2026-08-24T07:39:30.369Z",
+  "studioVersion": "6.9.2",
   "version": 3,
   "workspaces": [
     {
@@ -13,7 +13,7 @@
       },
       "name": "disha",
       "projectId": "luona25o",
-      "schema": "44340cc3.create-schema.json",
+      "schema": "9cc9575f.create-schema.json",
       "title": "Disha Student Assistance Cell",
       "tools": "ef87c8fe.create-tools.json"
     }

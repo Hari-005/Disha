@@ -3,7 +3,7 @@
     projectId: "luona25o",
     dataset: "production",
     apiVersion: "2026-07-28",
-    useCdn: true,
+    useCdn: false,
     enabled: true
   };
 
@@ -12,7 +12,6 @@
     '  "resources": *[_type == "resource" && status == "published"] | order(updatedAt desc, title asc) {',
     '    "id": coalesce(legacyId, _id),',
     "    title,",
-    "    category,",
     "    department,",
     "    semester,",
     "    scheme,",
