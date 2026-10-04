@@ -11,8 +11,6 @@
   var toastTimer;
 
   var els = {
-    globalSearch: document.getElementById("globalSearch"),
-    heroSearchButton: document.getElementById("heroSearchButton"),
     resourceSearch: document.getElementById("resourceSearch"),
     departmentFilter: document.getElementById("departmentFilter"),
     semesterFilter: document.getElementById("semesterFilter"),
@@ -24,9 +22,6 @@
     scholarshipFilters: document.getElementById("scholarshipFilters"),
     scholarshipGrid: document.getElementById("scholarshipGrid"),
     contactGrid: document.getElementById("contactGrid"),
-    statResources: document.getElementById("statResources"),
-    statDepartments: document.getElementById("statDepartments"),
-    statScholarships: document.getElementById("statScholarships"),
     toast: document.getElementById("toast"),
     nav: document.querySelector(".site-nav"),
     menuToggle: document.querySelector(".menu-toggle")
@@ -268,19 +263,6 @@
   }
 
   function bindEvents() {
-    els.heroSearchButton.addEventListener("click", function () {
-      resourceState.query = els.globalSearch.value.trim();
-      els.resourceSearch.value = resourceState.query;
-      document.getElementById("resources").scrollIntoView({ behavior: "smooth" });
-      renderResources();
-    });
-
-    els.globalSearch.addEventListener("keydown", function (event) {
-      if (event.key === "Enter") {
-        els.heroSearchButton.click();
-      }
-    });
-
     els.resourceSearch.addEventListener("input", function (event) {
       resourceState.query = event.target.value.trim();
       renderResources();
@@ -345,14 +327,6 @@
     });
   }
 
-  function renderStats() {
-    els.statResources.textContent = data.resources.length;
-    els.statDepartments.textContent = unique(data.resources.map(function (resource) {
-      return resource.department;
-    })).length;
-    els.statScholarships.textContent = data.scholarships.length;
-  }
-
   function init() {
     populateSelect(els.departmentFilter, unique(data.resources.map(function (resource) {
       return resource.department;
@@ -364,7 +338,6 @@
       return resource.scheme;
     })));
 
-    renderStats();
     renderScholarshipFilters();
     renderResources();
     renderScholarships();
