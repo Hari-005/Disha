@@ -1022,11 +1022,57 @@ svg {
 }
 
 @media (max-width: 430px) {
+  .site-header {
+    min-height: 82px;
+    padding: 10px 14px;
+  }
+
+  .brand {
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .brand-logo {
+    width: 62px;
+    height: 62px;
+    flex-basis: 62px;
+  }
+
+  .brand-tag {
+    font-size: clamp(0.8rem, 4vw, 1.1rem);
+    letter-spacing: 0.04em;
+  }
+
+  .menu-toggle {
+    width: 52px;
+    height: 52px;
+  }
+
+  .hero {
+    padding-top: 26px;
+    padding-bottom: 54px;
+  }
+
+  .hero-shell {
+    gap: 22px;
+  }
+
+  .hero-logo {
+    width: 110px;
+  }
+
   .hero-kicker {
     align-items: flex-start;
     flex-direction: column;
     gap: 8px;
-    margin-bottom: 34px;
+    margin-bottom: 22px;
+    font-size: clamp(1.15rem, 6vw, 2rem);
+  }
+
+  .hero-kicker span:last-child {
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
   .hero-kicker span:last-child::before {
@@ -1034,16 +1080,18 @@ svg {
   }
 
   .hero-name {
-    font-size: clamp(5.2rem, 28vw, 7.1rem);
+    font-size: clamp(4.6rem, 26vw, 7rem);
   }
 
   .hero-title {
-    margin-top: 12px;
-    font-size: 2.55rem;
+    margin-top: 10px;
+    font-size: clamp(2.1rem, 10vw, 3.4rem);
+    line-height: 0.96;
   }
 
   .hero-copy {
     margin-top: 24px;
+    font-size: 0.96rem;
   }
 
   .hero-routes {
@@ -1052,7 +1100,7 @@ svg {
   }
 
   .hero-routes a {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
 
   .meta-list {
