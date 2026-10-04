@@ -104,6 +104,17 @@ svg {
   min-width: 0;
 }
 
+.brand-tag {
+  color: var(--red);
+  font-family: var(--display);
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+}
+
 .brand-logo {
   display: block;
   width: 90px;
@@ -219,7 +230,7 @@ svg {
   align-items: center;
   gap: 12px;
   margin-bottom: clamp(34px, 6vh, 68px);
-  color: var(--red-dark);
+  color: var(--red);
   font-family: var(--display);
   font-size: clamp(1.65rem, 2.7vw, 2.4rem);
   font-weight: 800;
@@ -231,7 +242,7 @@ svg {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--muted);
+  color: var(--white);
   font-family: Inter, system-ui, sans-serif;
   font-size: 0.72rem;
   font-weight: 700;
@@ -271,7 +282,7 @@ svg {
 .hero-title {
   max-width: 760px;
   margin-top: 18px;
-  color: var(--red-dark);
+  color: var(--red);
   font-size: clamp(2.4rem, 5.2vw, 5rem);
   line-height: 0.86;
 }
