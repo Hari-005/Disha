@@ -555,17 +555,23 @@ svg {
 }
 
 .text-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-height: 36px;
-  padding: 6px 0;
-  color: var(--red-dark);
-  background: transparent;
-  border: 0;
+  padding: 8px 12px;
+  color: var(--white);
+  background: var(--red);
+  border: 1px solid var(--red);
+  border-radius: var(--radius);
   font-weight: 800;
 }
 
 .text-button:hover,
 .text-button:focus-visible {
-  color: var(--ink);
+  color: var(--white);
+  background: #9f1022;
+  border-color: #9f1022;
   outline: none;
 }
 
